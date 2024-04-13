@@ -89,3 +89,40 @@ edit.addEventListener("click",function(){
 
 
  }
+
+
+ var mbtn = document.querySelector(".conbox")
+ var span = document.querySelectorAll("span")
+var circle1 =document.querySelector(".circle1")
+var circle2 =document.querySelector(".circle2")
+var circle3 =document.querySelector(".circle3")
+
+ mbtn.addEventListener("click",function(){
+
+  if(span[0].style.visibility==="visible"){
+    
+    span[1].style.transform="rotate(45deg) translate(6px,15px)"
+    span[2].style.transform="rotate(-45deg) translate(6px,-18px)"
+    span[0].style.visibility="hidden"
+    circle1.style.transform ="translate(-40px)"
+    circle1.style.visibility="visible"
+    circle2.style.visibility="visible"
+    circle3.style.visibility="visible"
+    circle2.style.transform="translate(-25px,44px)" ;
+    circle3.style.transform=" translate(65px,1px)";
+
+  }else{
+    span[1].style.transform="none"
+    span[2].style.transform="none"
+    span[0].style.visibility="visible"
+    circle1.style.transform="translate(60px)"
+    circle3.style.transform="translate(50px,-60px)"
+    circle1.style.visibility="hidden"
+    circle2.style.visibility="hidden"
+    circle3.style.visibility="hidden"
+    circle2.style.transform="translate(60px,-55px)"
+  }
+  
+
+ })
+
