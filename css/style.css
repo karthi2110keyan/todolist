@@ -10,14 +10,15 @@
 
 .container{
 
-	height:95vh;
+	height:100vh;
 	width:100vw;
-	background-color:pink;
+	background-color:white;
  	display:flex;
 	align-items:flex-end;
 	justify-content:center;
   	flex-direction:column;
-
+	
+	
 
 }
 
@@ -25,11 +26,14 @@ textarea{
 	resize:none;
 	width:80%;
 	height:60px;
-        font-size:1.3rem;
+	font-size:1.3rem;
+	margin-bottom: 1rem;
+
+	
 }
 
  .addbtn{
-
+	margin-bottom: 1rem;
 	background-color:black;
 	color: white;
 	border: none;
@@ -56,8 +60,8 @@ textarea{
 }
 
 .list-container{
-	margin-bottom:0.5rem;
-	height:90vh;
+	margin-bottom:1rem;
+	height:80vh;
 	width:380px;
 	display: flex;
 	justify-content: flex-end;
@@ -105,11 +109,14 @@ textarea{
 
 	width:20px;
 	height:20px;	
-	background-image:url("../penimg.JPG"); 
+	background-image:url("../brush.svg"); 
         background-size:cover;
 	border:none;
 	transition:border 0.5s ease;
 	margin-top:0.2rem;
+	
+	
+	
 
 
 	
@@ -151,8 +158,10 @@ textarea{
 	gap: 10px;
 	margin: 0.5rem ;
 	justify-content: flex-end;
-	
-	
+	position: absolute;
+	z-index: 1;
+	padding: 1rem 0.5rem ;
+	top: 10px;
 }
 .conbox{
 	position: relative;
@@ -163,25 +172,25 @@ span{
 	position: absolute;
 }
 .top{
-	width: 50px;
-	height: 8px;
+	width: 35px;
+	height: 5px;
 	background-color:black;
-	top: 15px;
+	top: 12px;
 	border-radius: 10px;
 	transition: transform 0.5s ease;
 }	
 .middle{
-	width: 50px;
-	height: 8px;
+	width: 35px;
+	height: 5px;
 	background-color: black;
 	border-radius: 10px;
 	transition: transform 0.5s ease;
 }
 .bottom{
-	width: 50px;
-	height: 8px;
+	width: 35px;
+	height: 5px;
 	background-color: black;
-	bottom:5px;
+	bottom:15px;
 	border-radius: 10px;
 	transition: transform 0.5s ease;
 }
@@ -204,13 +213,18 @@ span{
 .circle1,.circle2,.circle3{
 	width: 50px;
 	height: 50px;
-	background-color: transparent;
+	background-color: white;
 	border-radius: 50%;
 	visibility: hidden;
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .circle1{
 	transition: transform 0.5s ease;
+	
 	
 }
 
@@ -224,13 +238,57 @@ span{
 
 
 
+.menu{
+	top: 200px;
+	width: 200px;
+	height: 300px;
+	margin-right: 0.5rem;
+	border-radius: 10px ;
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;
+	justify-content: center;
+	position: absolute;
+	overflow:scroll;
+	flex-wrap: wrap;
+	padding: 0.5rem 0rem;
+	visibility: hidden;
+	
+	
+}
 
 
+.bg-change{
+	border-radius: 5px;
+	width: 80px;
+	height: 80px;
+	background-color: aliceblue;
+}
 
 
+.designbox{
+	background-image: url(../bg3.jpg);
+	background-size: cover;
+	width: 100vw;
+	height: 50vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	padding: 1rem;
+
+}
+
+.day,.date{
+	font-size: 2rem;
+	padding-right: 1rem;
+	font-weight: bold;
+	color: aliceblue;
+}
 
 
-
+.bg-change{
+	background-size: cover;
+}
 
 
 
@@ -243,5 +301,3 @@ span{
 
 
 }
-
-

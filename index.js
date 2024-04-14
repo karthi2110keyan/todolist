@@ -1,16 +1,17 @@
+
 var button = document.querySelector(".addbtn")
 var input = document.querySelector("textarea")
 var divBox = document.querySelector(".list-container")
  
 
-const listItems=[]
-
-
-if(listItems===null){
-  console.log("hh")
+const listItems={
+  lists:[]
 }
 
 
+
+
+input.style.border="black"
 button.addEventListener("click",function(){
   
   const inputValue =input.value
@@ -23,10 +24,10 @@ button.addEventListener("click",function(){
  }else{
 
   if(inputValue.length<=30){
-    listItems.push(inputValue) 
+    listItems.lists.push(inputValue) 
   }
   input.removeAttribute("placeholder")
-  input.style.border="none"
+  input.style.border="black"
 }
 
 if(listItems.length===6){
@@ -48,17 +49,17 @@ input.value=""
 
 function render(){
 let todolist="";
-
- var i;
- for( i=0;i<listItems.length;i++){
+console.log(listItems.lists)
+var i;
+ for( i=0;i<listItems.lists.length;i++){
 
   
-const  todo= listItems[i]
+const  todo= listItems.lists[i]
 
 
  
   
-    const html = `<div  class="parabox"><p class="para">`+todo+`</p><div class="button-box"><button class="delete" onclick="listItems.splice(${i},1);render() 
+    const html = `<div  class="parabox"><p class="para">`+todo+`</p><div class="button-box"><button class="delete" onclick="listItems.lists.splice(${i},1);render()
     ">x</button><button class="editbox"></button></div></div>`
 
 
@@ -90,6 +91,8 @@ edit.addEventListener("click",function(){
 
  }
 
+// nav bar function..................
+
 
  var mbtn = document.querySelector(".conbox")
  var span = document.querySelectorAll("span")
@@ -101,8 +104,8 @@ var circle3 =document.querySelector(".circle3")
 
   if(span[0].style.visibility==="visible"){
     
-    span[1].style.transform="rotate(45deg) translate(6px,15px)"
-    span[2].style.transform="rotate(-45deg) translate(6px,-18px)"
+    span[1].style.transform="rotate(45deg) translate(8px,10px)"
+    span[2].style.transform="rotate(-45deg) translate(8px,-10px)"
     span[0].style.visibility="hidden"
     circle1.style.transform ="translate(-40px)"
     circle1.style.visibility="visible"
@@ -121,8 +124,68 @@ var circle3 =document.querySelector(".circle3")
     circle2.style.visibility="hidden"
     circle3.style.visibility="hidden"
     circle2.style.transform="translate(60px,-55px)"
+    sidebox.style.visibility="hidden"
   }
   
 
  })
+
+
+
+
+
+
+//date and day exciute 
+
+ var day_box = document.querySelector(".day")
+ var date_box = document.querySelector(".date")
+var weekdays=["Sunday","Monday","Tuesday","Wednesday","Thusday","Friday","Saturday"]
+ var day = new Date().getDay()
+ var date=new Date().getDate()
+day_box.innerHTML=weekdays[day]
+date_box.innerHTML=date
+
+
+
+
+var sidebox = document.querySelector(".menu")
+
+circle1.addEventListener("click",function(){
+  
+  if(sidebox.style.visibility==="visible"){
+    sidebox.style.visibility="hidden"
+  }else{
+    sidebox.style.visibility="visible"
+   
+  }
+})
+
+
+let background_image=[{
+  img1:"bgimg/bg0.jpeg",
+  img2:"bgimg/bg1.jpeg",
+  img3:"bgimg/bg2.jpeg"
+}]
+var bgbutton =document.querySelectorAll(".bg-change")
+var db =document.querySelector(".designbox")
+
+for(var j =0;j<bgbutton.length;j++){
+bgbutton[j].style.backgroundImage=`url(bgimg/bg${j}.jpeg)`
+}
+
+
+bgbutton.forEach(function(bg) {
+
+
+bg.addEventListener("click",function(){
+  
+
+  db.style.backgroundImage=bg.style.backgroundImage
+
+  })
+
+});
+
+
+
 
